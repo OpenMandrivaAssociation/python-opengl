@@ -11,7 +11,7 @@ License:	BSD
 Group:		System/Libraries
 URL:		http://pyopengl.sourceforge.net/
 Source:		%{libname}-%{version}.tar.bz2
-BuildRequires:	python-devel, mesaglut-devel
+BuildRequires:	python-devel, mesaglut-devel swig
 BuildRequires:	tcl tcl-devel tk tk-devel
 BuildRequires:  xorg-x11-Xvfb xorg-x11-xauth 
 
