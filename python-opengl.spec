@@ -14,6 +14,7 @@ Source:		%{libname}-%{version}.tar.bz2
 BuildRequires:	python-devel, mesaglut-devel swig
 BuildRequires:	tcl tcl-devel tk tk-devel
 BuildRequires:  xorg-x11-Xvfb xorg-x11-xauth 
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Python bindings for OpenGL
