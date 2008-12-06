@@ -17,6 +17,7 @@ BuildRequires:	tcl
 BuildRequires:	tcl-devel
 BuildRequires:	tk
 BuildRequires:	tk-devel
+BuildRequires:	python-setuptools
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -42,8 +43,6 @@ Documentation files for %{name}
 
 %setup -q -n %{libname}-%{version}%{beta}
 %patch0 -p1 -z .shebang
-
-perl -pi -e 's|/lib|/%_lib|g' ./config/linux.cfg  
 
 %build
 python setup.py build
