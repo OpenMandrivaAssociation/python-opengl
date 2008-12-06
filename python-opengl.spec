@@ -4,7 +4,7 @@
 Summary:	Python bindings for OpenGL
 Name:		python-opengl
 Version:	3.0.0
-Release:	%mkrel 0.0.%{beta}.1
+Release:	%mkrel 0.0.%{beta}.2
 License:	BSD
 Group:		System/Libraries
 URL:		http://pyopengl.sourceforge.net/
