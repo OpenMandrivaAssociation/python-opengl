@@ -1,10 +1,10 @@
-%define beta b5
+%define beta b8
 %define	libname PyOpenGL
 
 Summary:	Python bindings for OpenGL
 Name:		python-opengl
 Version:	3.0.0
-Release:	%mkrel 0.0.%{beta}.3
+Release:	%mkrel 0.0.%{beta}.1
 License:	BSD
 Group:		System/Libraries
 URL:		http://pyopengl.sourceforge.net/
@@ -50,23 +50,13 @@ python setup.py build
 %install
 rm -rf %{buildroot}
 
-python setup.py install --root=%{buildroot} --prefix=%{_prefix} --single-version-externally-managed
-
-# don't package the tests files
-rm -r %{buildroot}%{python_sitelib}/OpenGL/tests
-
-# for %%doc
-rm documentation/pydoc/builddocs.py documentation/buildepydoc.py
-
-# fix deps
-chmod 644 %{buildroot}%{python_sitelib}/%{libname}-%{version}%{beta}-py*.egg-info/*
+python setup.py install --root=%{buildroot} --prefix=%{_prefix}
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc license.txt
 %{python_sitelib}/*OpenGL*
 %exclude %{python_sitelib}/OpenGL/Tk
 
@@ -76,4 +66,3 @@ rm -rf %{buildroot}
 
 %files doc
 %defattr(-,root,root,-)
-%doc documentation/*
