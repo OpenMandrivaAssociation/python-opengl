@@ -1,9 +1,9 @@
-%define beta b8
+%define beta a3
 %define	libname PyOpenGL
 
 Summary:	Python bindings for OpenGL
 Name:		python-opengl
-Version:	3.0.0
+Version:	3.0.1
 Release:	%mkrel 0.0.%{beta}.1
 License:	BSD
 Group:		System/Libraries
