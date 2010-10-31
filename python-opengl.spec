@@ -1,17 +1,16 @@
-%define beta a3
 %define	libname PyOpenGL
 
 Summary:	Python bindings for OpenGL
 Name:		python-opengl
 Version:	3.0.1
-Release:	%mkrel 0.0.%{beta}.2
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Libraries
 URL:		http://pyopengl.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/pyopengl/%{libname}-%{version}%{beta}.tar.gz
+Source0:	http://downloads.sourceforge.net/pyopengl/%{libname}-%{version}.tar.gz
 Patch0:		PyOpenGL-3.0.0a6-shebang.patch
 BuildRequires:	mesaglut-devel
-%py_requires -d
+BuildRequires:	python-devel
 BuildRequires:	swig
 BuildRequires:	tcl
 BuildRequires:	tcl-devel
@@ -41,8 +40,8 @@ Documentation files for %{name}
 
 %prep
 
-%setup -q -n %{libname}-%{version}%{beta}
-%patch0 -p1 -z .shebang
+%setup -q -n %{libname}-%{version}
+%patch0 -p0 -z .shebang
 
 %build
 python setup.py build
