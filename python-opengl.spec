@@ -2,13 +2,12 @@
 
 Summary:	Python bindings for OpenGL
 Name:		python-opengl
-Version:	3.0.1
-Release:	4
+Version:	3.0.2
+Release:	1
 License:	BSD
 Group:		System/Libraries
 URL:		http://pyopengl.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/pyopengl/%{libname}-%{version}.tar.gz
-Patch0:		PyOpenGL-3.0.0a6-shebang.patch
+Source0:	https://pypi.python.org/packages/source/P/PyOpenGL/PyOpenGL-%{version}.tar.gz
 BuildRequires:	mesa-common-devel
 BuildRequires:	python-devel
 BuildRequires:	swig
@@ -41,7 +40,6 @@ Documentation files for %{name}
 %prep
 
 %setup -q -n %{libname}-%{version}
-%patch0 -p0 -z .shebang
 
 %build
 python setup.py build
@@ -50,13 +48,12 @@ python setup.py build
 python setup.py install --root=%{buildroot} --prefix=%{_prefix}
 
 %files
-%defattr(-,root,root)
-%{python_sitelib}/*OpenGL*
-%exclude %{python_sitelib}/OpenGL/Tk
+%{py_puresitedir}/*OpenGL*
+%exclude %{py_puresitedir}/OpenGL/Tk
 
 %files tk
 %defattr(-,root,root,-)
-%{python_sitelib}/OpenGL/Tk
+%{py_puresitedir}/OpenGL/Tk
 
 %files doc
 %defattr(-,root,root,-)
@@ -144,4 +141,5 @@ python setup.py install --root=%{buildroot} --prefix=%{_prefix}
 - allows build without X
 - from Tigrux <tigrux@ximian.com> 2.0.1.09-1
   - First rpm for Mandrake
+
 
