@@ -6,7 +6,7 @@ Version:	3.1.7
 Release:	1
 License:	BSD
 Group:		System/Libraries
-Url:		http://pyopengl.sourceforge.net/
+Url:		https://pyopengl.sourceforge.net/
 Source0:	https://pypi.python.org/packages/source/P/PyOpenGL/PyOpenGL-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-setuptools
